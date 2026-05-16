@@ -3,136 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Lucas | Portfólio</title>
+    <title>João Lucas | Estudante ADS</title>
     <style>
-        /* Configurações Gerais de Estilo (Resets básicos) */
+        /* Variáveis de Cores e Tipografia */
+        :root {
+            --bg-primary: #0a0f18;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --accent-primary: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+            --transition: all 0.3s ease;
+        }
+
+        /* Resets Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            background-color: #0f172a; /* Fundo dark moderno (Slate) */
-            color: #f8fafc; /* Texto claro para alto contraste */
+            background-color: var(--bg-primary);
+            color: var(--text-main);
             line-height: 1.6;
-            padding: 20px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px;
         }
 
-        /* Cabeçalho do Perfil */
-        header {
+        /* Seção Hero (Apresentação Principal) */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 30px;
+            padding: 80px 0 60px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: #38bdf8; /* Azul claro focado em Tech/Analytics */
-            margin-bottom: 10px;
+        .hero-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            border: 3px solid var(--accent-primary);
+            margin-bottom: 24px;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        header p {
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .hero h2 {
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+
+        /* Botões de Ação */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Seções Genéricas */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h3 {
+            font-size: 1.75rem;
+            margin-bottom: 30px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h3::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-primary);
+            border-radius: 4px;
+        }
+
+        /* Seção Currículo / Histórico */
+        .resume-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .timeline-item {
+            background-color: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-title {
             font-size: 1.2rem;
-            color: #94a3b8;
+            font-weight: 700;
+        }
+
+        .timeline-company {
+            color: var(--accent-primary);
             font-weight: 500;
         }
 
-        /* Seções de Conteúdo */
-        section {
-            margin-bottom: 40px;
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: var(--bg-card);
+            padding: 4px 10px;
+            border-radius: 4px;
         }
 
-        section h2 {
-            font-size: 1.5rem;
-            color: #38bdf8;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        section p {
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
-
-        /* Grade de Projetos Simplificada */
+        /* Seção Projetos (Grid) */
         .projects-grid {
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
 
-        .project-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 20px;
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             margin-bottom: 20px;
         }
 
-        .project-card h3 {
-            color: #f8fafc;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-        }
-
-        .project-card p {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            margin-bottom: 0;
-        }
-
-        /* Lista de Habilidades (Tags) */
-        .skills-list {
+        .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
         }
 
-        .skill-tag {
-            background-color: #334155;
-            color: #38bdf8;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .tag {
+            background-color: var(--bg-card);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
-        /* Rodapé e Links de Contato */
+        /* Rodapé */
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
-        }
-
-        .contact-links {
-            margin-bottom: 15px;
-        }
-
-        .contact-links a {
-            color: #f8fafc;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .contact-links a:hover {
-            color: #38bdf8;
-        }
-
-        footer p {
-            font-size: 0.85rem;
-            color: #64748b;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -140,63 +251,13 @@
 
     <div class="container">
         
-        <header>
+        <header class="hero">
+            <img src="https://via.placeholder.com/150/1f2937/38bdf8?text=Sua+Foto" alt="João Lucas" class="hero-img">
+            
             <h1>João Lucas</h1>
-            <p>Marketing Engineer & Analytics Engineer | MarTech Specialist</p>
-        </header>
-
-        <section id="about">
-            <h2>Sobre Mim</h2>
+            <h2>Marketing & Analytics Engineer | Founder</h2>
             <p>
-                Atuo no desenvolvimento de estratégias de crescimento e inteligência de vendas na intersecção entre dados, tecnologia e marketing (MarTech). Focado na otimização de processos comerciais, automação de dados de performance e ajustes estratégicos de growth.
+                Ajustador estratégico focado no desenvolvimento de inteligência de vendas, automação de processos comerciais e growth. Projetando operações de alto desempenho na intersecção entre dados e tecnologia de marketing.
             </p>
-            <p>
-                Atualmente aprofundando competências técnicas através da graduação em Análise e Desenvolvimento de Sistemas.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Competências</h2>
-            <div class="skills-list">
-                <span class="skill-tag">Analytics Engineering</span>
-                <span class="skill-tag">Marketing Performance Strategy</span>
-                <span class="skill-tag">Meta Ads & Google Ads</span>
-                <span class="skill-tag">Automação de Vendas (CRM/SDR)</span>
-                <span class="skill-tag">Versionamento (Git/GitHub)</span>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projetos & Atuações</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <h3>Wave Flow</h3>
-                    <p>Plataforma de inteligência de vendas baseada em IA e automação de clínicas. Desenvolvimento focado na integração estrutural de CRMs e fluxos operacionais automatizados de SDR/BDR.</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Enjoy Scale</h3>
-                    <p>Agência especializada em crescimento e marketing de performance, atuando diretamente no gerenciamento de tráfego pago escalável e engenharia de dados aplicada a anúncios.</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Plano de Aula Pronto</h3>
-                    <p>Iniciativa digital de escala voltada para o setor educacional, validando modelos de alta conversão e tração de receita.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <footer>
-            <div class="contact-links">
-                <a href="https://github.com/SEU-USUARIO-AQUI" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/SEU-PERFIL-AQUI" target="_blank">LinkedIn</a>
-            </div>
-            <p>&copy; 2026 João Lucas. Desenvolvido para Entrega Intermediária.</p>
-        </footer>
-
-    </div>
-
-</body>
-</html>
+            
+            <div class="btn
