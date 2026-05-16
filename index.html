@@ -3,316 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Lucas | Marketing & Analytics Engineer</title>
-    
+    <title>João Lucas Agripino | Portfólio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-base: #09090b; /* Zinco super escuro */
-            --bg-surface: #18181b;
-            --primary: #3b82f6; /* Azul Tech */
-            --primary-glow: rgba(59, 130, 246, 0.15);
-            --text-high: #f4f4f5;
-            --text-muted: #a1a1aa;
-            --border: #27272a;
+            --bg-main: #000000;
+            --bg-card: #0a0a0a;
+            --bg-hover: #111111;
+            --border-color: #222222;
+            --text-primary: #ededed;
+            --text-secondary: #888888;
+            --accent: #ffffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background-color: var(--bg-base);
-            color: var(--text-high);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 64px 24px;
         }
 
-        /* Efeito de Fundo Global */
-        .bg-glow {
-            position: absolute;
-            top: -150px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
-            filter: blur(60px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Navbar Simplificada */
-        nav {
+        /* Nav */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 32px 0;
-            border-bottom: 1px solid var(--border);
+            padding-bottom: 48px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--text-high);
-            text-decoration: none;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.25rem;
-            margin-left: 20px;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 70vh;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            border-radius: 50px;
-            font-size: 0.85rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-            width: fit-content;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 64px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-            background: linear-gradient(to right, #ffffff, #a1a1aa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            max-width: 900px;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            font-weight: 300;
-            margin-bottom: 48px;
-        }
-
-        /* KPIs / High-Level Stats */
-        .stats-container {
-            display: flex;
-            gap: 48px;
-            flex-wrap: wrap;
-            border-top: 1px solid var(--border);
-            padding-top: 32px;
-        }
-
-        .stat h4 {
             font-size: 2.5rem;
-            color: var(--text-high);
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
-        .stat p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             font-weight: 600;
-        }
-
-        /* Projetos - Grid CSS Moderno */
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            font-weight: 800;
             letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
-        .projects {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
+        .hero h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 24px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: var(--text-high);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 24px;
-        }
-
-        .tags {
+        .btn-group {
             display: flex;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .tag {
-            background-color: var(--bg-base);
-            border: 1px solid var(--border);
-            color: var(--text-high);
-            padding: 4px 12px;
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
             border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-main);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-hover);
+            border-color: #444;
+        }
+
+        /* Seções Gerais */
+        section {
+            margin-bottom: 64px;
+        }
+
+        h3.section-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .bio-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .bio-text p {
+            margin-bottom: 16px;
+        }
+
+        /* Timeline / Experiência */
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .timeline-date {
+            min-width: 100px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-top: 2px;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .timeline-content span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Animações de Entrada */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate {
-            animation: fadeUp 0.8s ease forwards;
+        footer span {
+            font-size: 0.85rem; 
+            color: var(--text-secondary);
         }
     </style>
 </head>
 <body>
-    <div class="bg-glow"></div>
 
     <div class="container">
-        <nav class="animate">
-            <a href="#" class="logo">JL.</a>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/joão-lucas-agripino-0462323b3   " target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/joaolucasagripino" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <header>
+            <div class="logo">JL.</div>
+            <div class="nav-links">
+                <a href="https://linkedin.com/in/joão-lucas-agripino-0462323b3" target="_blank">LinkedIn</a>
+                <a href="https://github.com/joaolucasagripino" target="_blank">GitHub</a>
             </div>
-        </nav>
+        </header>
 
-        <section class="hero animate" style="animation-delay: 0.1s;">
-            <div class="badge">Marketing & Analytics Engineer</div>
-            <h1>Engenharia de Performance e Inteligência de Vendas.</h1>
-            <p>Atuando como fundador e ajustador estratégico na intersecção entre dados e tecnologia. Foco absoluto na estruturação, automação e escala de operações de growth.</p>
+        <section class="hero">
+            <h1>João Lucas Agripino</h1>
+            <h2>// Estudante ADS</h2>
             
-            <div class="stats-container">
-                <div class="stat">
-                    <h4>+1M</h4>
-                    <p>Faturamento Validação Expressa</p>
-                </div>
-                <div class="stat">
-                    <h4>1.3M</h4>
-                    <p>Ad Spend Gerenciado</p>
-                </div>
-                <div class="stat">
-                    <h4>02</h4>
-                    <p>Operações Fundadas</p>
-                </div>
+            <div class="btn-group">
+                <a href="https://docs.google.com/document/d/1EJPRtLOoGJpXrFpaioczdwVRKt1PUXEJddUHTjicHV4/edit?usp=drive_link" class="btn btn-primary" target="_blank">Meu Currículo</a>
+                <a href="https://docs.google.com/presentation/d/1Z-IA4mqu_3ra11MjrbbkrQvdE0ahkEk9Q7gdajETKc4/edit?usp=drive_link" class="btn btn-secondary" target="_blank">Projetos Profissionais e Acadêmicos</a>
             </div>
         </section>
 
-        <section class="projects animate" style="animation-delay: 0.2s;">
-            <h2 class="section-title">Ecossistema de Atuação</h2>
+        <section>
+            <h3 class="section-title">Biografia</h3>
+            <div class="bio-text">
+                <p>Sou João Lucas, tenho 19 anos e sou um profissional movido pela paixão aos negócios e o apreço pela tecnologia. Minha jornada analítica começou com meu primeiro trabalho aos 15 anos em vendas e gestão de tecnologias, o que me deu a base para entender que a tecnologia é, antes de tudo, o motor para resolver problemas reais e gerar receita.</p>
+                
+                <p>Essa visão sistêmica foi aprofundada no meu segundo trabalho, na empresa Plano de Aulas Pronto, onde, como Gestor de Marketing e Operações, liderei a Engenharia de Requisitos aplicada a fluxos de conversão e a automação de processos sempre guiados pelo impacto financeiro (ROI). Hoje, consolido essa base técnica cursando Análise e Desenvolvimento de Sistemas (ADS) e atuando como Co-fundador e Desenvolvedor na Wave Flow. Ao lado de uma equipe de quatro pessoas, co-crio o core de uma plataforma B2B de Sales Intelligence.</p>
+                
+                <p>Encaro o aprendizado contínuo como regra inegociável e busco evoluir e dominar tudo o que for necessário para alcançar minha visão de longo prazo e meu sonhos!</p>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Trajetória</h3>
             
-            <div class="grid">
-                <div class="card">
-                    <i class="fa-solid fa-robot card-icon"></i>
-                    <h3>Wave Flow</h3>
-                    <p>Plataforma SaaS de inteligência de vendas e automação de clínicas estruturada em IA. Arquitetura de integração de CRMs e mapeamento de automações para SDRs/BDRs.</p>
-                    <div class="tags">
-                        <span class="tag">AI Integration</span>
-                        <span class="tag">CRM Automation</span>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Atual</div>
+                <div class="timeline-content">
+                    <h4>Co-fundador e Desenvolvedor</h4>
+                    <span>Wave Flow</span>
+                    <p>Co-criação do core de uma plataforma B2B de Sales Intelligence ao lado de uma equipe de quatro pessoas, conectando tecnologia para resolução de problemas reais de negócios.</p>
                 </div>
+            </div>
 
-                <div class="card">
-                    <i class="fa-solid fa-chart-line card-icon"></i>
-                    <h3>Enjoy Scale</h3>
-                    <p>Agência especializada em growth marketing. Gestão de infraestrutura escalável, tática de tráfego pago via Meta/Google Ads e alinhamento de funis de conversão.</p>
-                    <div class="tags">
-                        <span class="tag">Performance</span>
-                        <span class="tag">Data Analytics</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <i class="fa-solid fa-bolt card-icon"></i>
-                    <h3>Escala de Infoproduto</h3>
-                    <p>Estruturação técnica de produto digital de alto impacto para o setor educacional. Validação agressiva de funil atingindo múltiplos sete dígitos de receita.</p>
-                    <div class="tags">
-                        <span class="tag">High-Ticket</span>
-                        <span class="tag">Meta Ads</span>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Anterior</div>
+                <div class="timeline-content">
+                    <h4>Gestor de Marketing e Operações</h4>
+                    <span>Plano de Aulas Pronto</span>
+                    <p>Liderança na Engenharia de Requisitos aplicada a fluxos de conversão e automação de processos, sempre guiados pelo impacto financeiro (ROI).</p>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 João Lucas. Repositório versionado para entrega de Análise e Desenvolvimento de Sistemas.</p>
+            <span>© 2026 João Lucas Agripino Pinheiro.</span>
         </footer>
     </div>
+
 </body>
 </html>
