@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Lucas | Portfólio</title>
+    <style>
+        /* Configurações Gerais de Estilo (Resets básicos) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Fundo dark moderno (Slate) */
+            color: #f8fafc; /* Texto claro para alto contraste */
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Cabeçalho do Perfil */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #38bdf8; /* Azul claro focado em Tech/Analytics */
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* Seções de Conteúdo */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        section p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        /* Grade de Projetos Simplificada */
+        .projects-grid {
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            color: #f8fafc;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 0;
+        }
+
+        /* Lista de Habilidades (Tags) */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background-color: #334155;
+            color: #38bdf8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Rodapé e Links de Contato */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+        }
+
+        .contact-links {
+            margin-bottom: 15px;
+        }
+
+        .contact-links a {
+            color: #f8fafc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: #38bdf8;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>João Lucas</h1>
+            <p>Marketing Engineer & Analytics Engineer | MarTech Specialist</p>
+        </header>
+
+        <section id="about">
+            <h2>Sobre Mim</h2>
+            <p>
+                Atuo no desenvolvimento de estratégias de crescimento e inteligência de vendas na intersecção entre dados, tecnologia e marketing (MarTech). Focado na otimização de processos comerciais, automação de dados de performance e ajustes estratégicos de growth.
+            </p>
+            <p>
+                Atualmente aprofundando competências técnicas através da graduação em Análise e Desenvolvimento de Sistemas.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Competências</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Analytics Engineering</span>
+                <span class="skill-tag">Marketing Performance Strategy</span>
+                <span class="skill-tag">Meta Ads & Google Ads</span>
+                <span class="skill-tag">Automação de Vendas (CRM/SDR)</span>
+                <span class="skill-tag">Versionamento (Git/GitHub)</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projetos & Atuações</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Wave Flow</h3>
+                    <p>Plataforma de inteligência de vendas baseada em IA e automação de clínicas. Desenvolvimento focado na integração estrutural de CRMs e fluxos operacionais automatizados de SDR/BDR.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Enjoy Scale</h3>
+                    <p>Agência especializada em crescimento e marketing de performance, atuando diretamente no gerenciamento de tráfego pago escalável e engenharia de dados aplicada a anúncios.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Plano de Aula Pronto</h3>
+                    <p>Iniciativa digital de escala voltada para o setor educacional, validando modelos de alta conversão e tração de receita.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="contact-links">
+                <a href="https://github.com/SEU-USUARIO-AQUI" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/SEU-PERFIL-AQUI" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 João Lucas. Desenvolvido para Entrega Intermediária.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
